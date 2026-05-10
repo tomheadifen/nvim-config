@@ -3,7 +3,11 @@ return {
     "neovim/nvim-lspconfig",
     opts = {
       servers = {
-        phpactor = {},
+        phpactor = {
+          handlers = {
+            ["textDocument/publishDiagnostics"] = function() end,
+          },
+        },
       },
     },
   },
